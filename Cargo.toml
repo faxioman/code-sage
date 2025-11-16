@@ -1,0 +1,97 @@
+[package]
+name = "code-sage"
+version = "0.1.0"
+edition = "2021"
+authors = ["faxioman <fabio@rapidosoft.it>"]
+description = "MCP server for semantic code search with hybrid search (BM25 + vector embeddings)"
+license = "MIT"
+
+[[bin]]
+name = "code-sage"
+path = "src/main.rs"
+
+[dependencies]
+# MCP Protocol
+rmcp = { version = "0.8.5", features = ["macros", "server", "transport-io"] }
+tokio = { version = "1.42", features = ["full"] }
+async-trait = "0.1"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+schemars = "1.1"
+bincode = { version = "2.0.1", features = ["serde"] }  # Binary serialization for Sled
+
+# Vector Search (embedded, file-based)
+usearch = "2.21.3"
+
+# Full-Text Search (BM25)
+tantivy = "0.25.0"
+
+# AST Parsing
+tree-sitter = "0.25.10"
+tree-sitter-rust = "0.24.0"
+tree-sitter-python = "0.25.0"
+tree-sitter-javascript = "0.25.0"
+tree-sitter-typescript = "0.23"
+tree-sitter-java = "0.23"
+tree-sitter-c = "0.24.1"
+tree-sitter-cpp = "0.23"
+tree-sitter-go = "0.25.0"
+tree-sitter-c-sharp = "0.23"
+tree-sitter-swift = "0.7.1"
+tree-sitter-kotlin = { git = "https://github.com/fwcd/tree-sitter-kotlin", rev = "57fb4560ba8641865bc0baa6b3f413b236112c4c" }
+tree-sitter-ruby = "0.23"
+tree-sitter-objc = "3.0"
+tree-sitter-php = "0.24.2"
+tree-sitter-scala = "0.24.0"
+tree-sitter-md = "0.5.1"
+# Config/Markup parsers
+tree-sitter-json = "0.24.8"
+tree-sitter-yaml = "0.7.2"
+tree-sitter-xml = "0.7.0"
+tree-sitter-html = "0.23.2"
+tree-sitter-css = "0.25.0"
+tree-sitter-scss = "1.0.0"
+tree-sitter-toml-ng = "0.7.0"
+
+# Embeddings API clients
+reqwest = { version = "0.12", features = ["json"] }
+# NOTE: We call Ollama API directly with reqwest, not using ollama-rs
+
+# File system utilities
+walkdir = "2.5"
+ignore = "0.4"  # Gitignore-style pattern matching
+glob = "0.3"
+
+# Hashing and IDs
+sha2 = "0.10"
+md5 = "0.8.0"  # For path hashing in sync snapshots
+uuid = { version = "1.11", features = ["v4", "serde"] }
+regex = "1.11"  # For glob pattern matching
+
+# Error handling
+anyhow = "1.0"
+thiserror = "2.0"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Time utilities
+chrono = "0.4"
+
+# Configuration
+config = "0.15.19"
+dotenv = "0.15"
+
+# Storage for metadata
+sled = "0.34"  # Embedded key-value store
+
+# Concurrency
+rayon = "1.10"  # Parallel iterators
+dashmap = "6.1"  # Concurrent HashMap
+
+[dev-dependencies]
+tokio-test = "0.4"
+tempfile = "3.14"
