@@ -51,7 +51,7 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md) for detailed architecture documentation
 ### Build from source
 
 ```bash
-git clone https://github.com/faxioman/code-sage-mcp.git
+git clone https://github.com/faxioman/code-sage.git
 cd code-sage
 cargo build --release
 ```
@@ -344,8 +344,8 @@ MIT License - see [LICENSE](./LICENSE)
 
 ## Support
 
-- Issues: [GitHub Issues](https://github.com/faxioman/code-sage-mcp/issues)
-- Discussions: [GitHub Discussions](https://github.com/faxioman/code-sage-mcp/discussions)
+- Issues: [GitHub Issues](https://github.com/faxioman/code-sage/issues)
+- Discussions: [GitHub Discussions](https://github.com/faxioman/code-sage/discussions)
 
 ---
 
