@@ -108,7 +108,7 @@ pub async fn handle_analyze_code(&self, args: AnalyzeCodeArgs) -> Result<String>
 **Supported Languages** (AST parsing):
 - Rust, Python, JavaScript, TypeScript
 - Java, C/C++, Go, C#
-- Swift, Kotlin, Ruby, Objective-C
+- Swift, Kotlin, Ruby, Elixir, Objective-C
 - PHP, Scala
 - Markdown
 
@@ -371,8 +371,8 @@ MAX_CHUNKS=450000
 
 **Programming Languages (AST Parsing)**:
 ```
-.rs .py .pyi .js .jsx .mjs .cjs .ts .tsx .java .c .h .cpp .hpp .cc .cxx 
-.go .cs .swift .kt .kts .rb .rake .gemspec .m .mm .php .scala .sc .sbt
+.rs .py .pyi .js .jsx .mjs .cjs .ts .tsx .java .c .h .cpp .hpp .cc .cxx
+.go .cs .swift .kt .kts .rb .rake .gemspec .ex .exs .m .mm .php .scala .sc .sbt
 ```
 
 **Config/Markup (AST Parsing)**:

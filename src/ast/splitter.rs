@@ -75,6 +75,7 @@ impl AstSplitter {
             Language::Swift => tree_sitter_swift::LANGUAGE.into(),
             Language::Kotlin => tree_sitter_kotlin::language(),
             Language::Ruby => tree_sitter_ruby::LANGUAGE.into(),
+            Language::Elixir => tree_sitter_elixir::LANGUAGE.into(),
             Language::ObjectiveC => tree_sitter_objc::LANGUAGE.into(),
             Language::Php => tree_sitter_php::LANGUAGE_PHP.into(),
             Language::Scala => tree_sitter_scala::LANGUAGE.into(),
@@ -276,6 +277,12 @@ impl AstSplitter {
                 "class",
                 "module",
                 "singleton_method",
+            ],
+            Language::Elixir => vec![
+                "call",
+                "anonymous_function",
+                "do_block",
+                "stab_clause",
             ],
             Language::ObjectiveC => vec![
                 "function_definition",

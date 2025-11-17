@@ -21,8 +21,8 @@ A high-performance **MCP (Model Context Protocol) server** for semantic code sea
   - **LM Studio (Recommended)** - OpenAI-compatible local embeddings with better stability
   - Ollama (local embeddings) - Note: Unstable on macOS M1 with some models
 - **MCP Compatible**: Works with Claude Desktop, Cursor, and other MCP clients
-- **Multi-Language Support**: 
-  - **Programming Languages (AST)**: Rust, Python, JavaScript/TypeScript, Java, C/C++, Go, C#, Swift, Kotlin, Ruby, Objective-C, PHP, Scala
+- **Multi-Language Support**:
+  - **Programming Languages (AST)**: Rust, Python, JavaScript/TypeScript, Java, C/C++, Go, C#, Swift, Kotlin, Ruby, Elixir, Objective-C, PHP, Scala
   - **Config/Markup (AST)**: JSON, YAML, XML, HTML, CSS, SCSS, TOML, Markdown
   - **iOS/macOS**: .xib, .storyboard, .plist (via XML parser), .xcconfig (via TOML parser)
   - **Android/Java**: .xml (layouts, manifests), .gradle, .properties
@@ -193,7 +193,7 @@ Create a searchable index of your code by analyzing functions, classes, and meth
 4. **Hidden Files**: Skipped by default
 
 **Supported Extensions by Default** (60+ total):
-- **Core Languages**: .rs, .py, .js, .jsx, .ts, .tsx, .java, .c, .h, .cpp, .hpp, .go, .cs, .swift, .kt, .rb, .m, .mm, .php, .scala
+- **Core Languages**: .rs, .py, .js, .jsx, .ts, .tsx, .java, .c, .h, .cpp, .hpp, .go, .cs, .swift, .kt, .rb, .ex, .exs, .m, .mm, .php, .scala
 - **JS/TS Variants**: .mjs, .cjs
 - **Config Formats**: .json, .yaml, .yml, .toml, .xml, .ini
 - **iOS/macOS**: .xib, .storyboard, .plist, .xcconfig
@@ -203,6 +203,7 @@ Create a searchable index of your code by analyzing functions, classes, and meth
 - **Shell Scripts**: .sh, .bash, .zsh, .fish
 - **.NET**: .csproj, .sln, .config, .props, .targets
 - **Ruby**: .gemspec, .rake
+- **Elixir**: .ex, .exs
 - **Docs**: .md, .markdown, .txt, .rst
 - **Notebooks**: .ipynb
 
