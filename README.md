@@ -298,6 +298,11 @@ RRF Reranking (merge with k=100)
 Final Results (Top K)
 ```
 
+**RRF (Reciprocal Rank Fusion)**:
+The hybrid search uses RRF reranking to balance results from vector and BM25 searches based on their ranking positions rather than raw scores. This creates a fair and balanced final ranking that combines semantic relevance with keyword matching. [Learn more about RRF](https://milvus.io/docs/it/rrf-ranker.md)
+
+The RRF formula combines rankings using: `score = 1/(k + rank)` where `k` is a smoothing parameter (default: 100, configurable via `RRF_K` environment variable).
+
 ### Development Setup
 
 ```bash
